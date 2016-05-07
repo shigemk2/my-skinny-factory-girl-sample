@@ -1,6 +1,6 @@
 import scalikejdbc.ConnectionPool
 
 trait Connection {
-  Class.forName("org.h2.Driver")
-  ConnectionPool.add('sysadmin, "jdbc:h2:mem:sysadmin", "sa", "sa")
+  Class.forName("com.mysql.jdbc.Driver").newInstance()
+  ConnectionPool.add('sys, "jdbc:mysql://192.168.99.100/sys", "root", "")
 }
