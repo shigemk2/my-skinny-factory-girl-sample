@@ -8,7 +8,7 @@ import skinny.test.FactoryGirl
 class FooSpec extends fixture.FunSpec with Matchers
   with Connection with CreateTables with AutoRollback with Logging {
 
-  override def db(): DB = NamedDB('sysadmin).toDB()
+  override def db(): DB = NamedDB('default).toDB()
 
   describe("factory.conf") {
     it("should be available") { implicit session =>
